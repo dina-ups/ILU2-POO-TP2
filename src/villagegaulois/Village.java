@@ -17,7 +17,7 @@ public class Village {
 		villageois = new Gaulois[nbVillageoisMaximum];
 		marche = new Marche(nbEtal);
 	}
-
+	
 	public String getNom() {
 		return nom;
 	}
@@ -111,7 +111,7 @@ public class Village {
 	}
 
 	public String[] donnerEtatMarche() {
-		return marche.donnerEtat();
+		return marche.donnerEtal();
 	}
 
 	////////////////////// Classe Interne ///////////////////////
@@ -206,7 +206,7 @@ public class Village {
 		 *         tableau successives : le nom du vendeur, le nombre de produit
 		 *         qu'il lui reste à vendre, le type de produit à vendre
 		 */
-		private String[] donnerEtat() {
+		private String[] donnerEtal() {
 			int tailleTableau = getNbEtalsOccupe() * 3;
 			String[] donnees = new String[tailleTableau];
 			int j = 0;
