@@ -24,14 +24,21 @@ public class ControlLibererEtal {
 		String[] donneesEtal = null;
 		Etal etalVendeur= controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
 		if (etalVendeur!=null) {
-			etalVendeur.etatEtal(donneesEtal);
+			donneesEtal=etalVendeur.etatEtal();
+			etalVendeur.libererEtal();
 			
 		}
 		return donneesEtal;
 	}
-	public Etal isVendeur(String nom) 
+	public boolean isVendeur(String nom) 
 	{
-		return controlTrouverEtalVendeur.trouverEtalVendeur(nom);
+		boolean vendeurReconnu=false;
+		Etal etal= controlTrouverEtalVendeur.trouverEtalVendeur(nom);
+		if (etal!=null) 
+		{
+			vendeurReconnu=true;
+		}
+		return vendeurReconnu;
 	}
 
 }
